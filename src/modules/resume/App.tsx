@@ -1,8 +1,12 @@
 import React from "react";
-import { Dropdown } from "../../components";
+import { Dropdown, StyleProvider } from "../../components";
 
 function CartResumeApp() {
-  return <Dropdown />;
+  return (
+    <StyleProvider>
+      <Dropdown />
+    </StyleProvider>
+  );
 }
 
 export { CartResumeApp };

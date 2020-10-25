@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
-import { Cart } from "../../components";
+import { Cart, StyleProvider } from "../../components";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -21,14 +21,16 @@ const useStyles = makeStyles(() =>
 function CartDetailsApp() {
   const classes = useStyles();
   return (
-    <List className={classes.list}>
-      {[1, 2, 3].map((i) => (
-        <Fragment key={i}>
-          <Cart />
-          <Divider variant="inset" component="li" />
-        </Fragment>
-      ))}
-    </List>
+    <StyleProvider>
+      <List className={classes.list}>
+        {[1, 2, 3].map((i) => (
+          <Fragment key={i}>
+            <Cart />
+            <Divider variant="inset" component="li" />
+          </Fragment>
+        ))}
+      </List>
+    </StyleProvider>
   );
 }
 
